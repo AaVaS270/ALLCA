@@ -1,20 +1,34 @@
 # 1 reverse a string
-'''def reverse(a):
+def reverse(a):
     rev=""
     for i in a:
         rev=i+rev
     return rev
 
+def reverse2(a):
+    if len(a) == 0:
+        return a
+    else:
+        return reverse2(a[1:]) + a[0]
+
+
 A=input('Enter any text')
-print('Reverse:',reverse(A))'''
+print('Reverse:', reverse2(A))
 
 # 2 unique elements of a list
 '''def unique(list):
     li=[]
     for i in list:
-        if list.count(i)==1:
+        if list.count(i)==1: # or for a in list; if a not in Li; Li.append(a)
             li.append(i)
     return li
+
+def unique2(list):
+    Li=[]
+    for i in list:
+        if i not in Li:
+            Li.append(i)
+    return Li
 
 
 L=[2,4,5,5,6,7,4,5,4,7]
